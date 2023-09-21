@@ -1,0 +1,8 @@
+name: http
+description: http library
+environment:
+  sdk: '^3.0.0'
+dependencies:
+  http: ^1.1.0
+  flutter:
+    sdk: flutter
