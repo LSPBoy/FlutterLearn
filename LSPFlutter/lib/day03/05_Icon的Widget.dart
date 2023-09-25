@@ -58,12 +58,12 @@ class IconDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // return Icon(Icons.pets, size: 300, color: Colors.orange,);
+    return const Icon(Icons.pets, size: 300, color: Colors.orange,);
 
     //设置对应的字体
     // static const IconData pets_sharp = IconData(0xeb98, fontFamily: 'MaterialIcons');
     //1.0xe91d —> unicode编码
-    return const Text("\uf0077", style: TextStyle(fontSize: 100, color: Colors.orange, fontFamily: "MaterialIcons"),);
+    // return const Text("\uf0077", style: TextStyle(fontSize: 100, color: Colors.orange, fontFamily: "MaterialIcons"),);
   }
 
 }
