@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Initialize_items.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -8,22 +9,27 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
-        index: 0,
-        children: [
-
-        ],
+        index: _currentIndex,
+        children: pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Image.asset("assets/images/tab/home.png",), activeIcon: Image.asset("assets/images/tab/home.png",), label: "首页"),
-          BottomNavigationBarItem(icon: Image.asset("assets/images/tab/home.png"), activeIcon: Image.asset("assets/images/tab/home.png"),label: "书音影"),
-        ],
+        type: BottomNavigationBarType.fixed,
+        selectedFontSize: 14,
+        unselectedFontSize: 14,
+        currentIndex: _currentIndex,
+        items: bottomBarItems,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
     );
   }
 }
-// tabbar/home.png
