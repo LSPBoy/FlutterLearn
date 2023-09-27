@@ -131,21 +131,23 @@ class LSPHomeMovieItem extends StatelessWidget {
   }
 
   Widget buildContentInfoRate() {
-    return const Row(
-      children: <Widget>[
-        StarRating(
-          rating: 9.2,
-          size: 20,
-          maxRating: 10,
-        ),
-        SizedBox(
-          width: 6,
-        ),
-        Text(
-          "9.2",
-          style: TextStyle(fontSize: 16),
-        )
-      ],
+    return const FittedBox(
+      child: Row(
+        children: <Widget>[
+          StarRating(
+            rating: 9.2,
+            size: 20,
+            maxRating: 10,
+          ),
+          SizedBox(
+            width: 6,
+          ),
+          Text(
+            "9.2",
+            style: TextStyle(fontSize: 16),
+          )
+        ],
+      ),
     );
   }
 

@@ -9,20 +9,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HYHomePage(),
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        splashColor: Colors.transparent,
-      ),
     );
   }
 }
 
 class HYHomePage extends StatelessWidget {
-  HYHomePage({super.key});
-
-  final GlobalKey<_HYHomeContentState> homeKey = GlobalKey();
+  const HYHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,33 +24,19 @@ class HYHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Demo"),
       ),
-      body: HYHomeContent(key: homeKey,),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.gesture),
-        onPressed: (){
-          print(homeKey.currentState?.message);
-          print(homeKey.currentState?.widget.name);
-          homeKey.currentState?.test();
-        },
-      ),
+      body: const HYHomeContent(),
     );
   }
 }
 
 class HYHomeContent extends StatefulWidget {
   const HYHomeContent({super.key});
-  final String name = "李大锤";
+
   @override
   State<HYHomeContent> createState() => _HYHomeContentState();
 }
 
 class _HYHomeContentState extends State<HYHomeContent> {
-  final String message = "Hello World";
-
-  void test() {
-    print("testtesttest");
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container();
