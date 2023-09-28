@@ -7,12 +7,12 @@ import '../unknown_page.dart';
 
 class LSPRounter {
   static final Map<String, WidgetBuilder> routes = {
-    LSPAbountPage.routeName: (ctx) => LSPAbountPage()
+    LSPAbountPage.routeName: (ctx) => const LSPAbountPage()
   };
 
   static const String initialRoute = HYHomePage.routeName;
 
-  static final RouteFactory generateRoute = (settings) {
+  static RouteFactory get generateRoute => (settings) {
     if (settings.name == DetailPage.routeName) {
       return MaterialPageRoute(
           builder: (ctx) {
@@ -25,10 +25,10 @@ class LSPRounter {
   };
 
 
-  static final RouteFactory? unknownRoute = (settings) {
+  static RouteFactory get unknownRoute => (settings) {
     return MaterialPageRoute(
         builder: (ctx) {
-          return LSPUnknownPage();
+          return const LSPUnknownPage();
         }
     );
   };

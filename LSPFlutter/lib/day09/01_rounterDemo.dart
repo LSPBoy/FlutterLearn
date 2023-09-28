@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HYHomePage(),
+      home: const HYHomePage(),
       theme: ThemeData(primarySwatch: Colors.green, splashColor: Colors.red),
       routes: LSPRounter.routes,
       initialRoute: LSPRounter.initialRoute,
@@ -48,24 +48,24 @@ class _HYHomePageState extends State<HYHomePage> {
           children: [
             Text(_homeMessage, style: const TextStyle(fontSize: 20, color:Colors.purple),),
             TextButton(
-              child: const Text("跳转到详情"),
               style: TextButton.styleFrom(backgroundColor: Colors.greenAccent),
               onPressed: () => _jumpToDetail(context),
+              child: const Text("跳转到详情"),
             ),
             TextButton(
-              child: const Text("跳转到详情2"),
               style: TextButton.styleFrom(backgroundColor: Colors.greenAccent),
               onPressed: () => _jumpToDetails2(context),
+              child: const Text("跳转到详情2"),
             ),
             TextButton(
-              child: const Text("跳转到关于"),
               style: TextButton.styleFrom(backgroundColor: Colors.greenAccent),
               onPressed: () => _jumpToAbout(context),
+              child: const Text("跳转到关于"),
             ),
             TextButton(
-              child: const Text("跳转到设置"),
               style: TextButton.styleFrom(backgroundColor: Colors.greenAccent),
               onPressed: () => _jumpToSettings(context),
+              child: const Text("跳转到设置"),
             ),
           ],
         ),
