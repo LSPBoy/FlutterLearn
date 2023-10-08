@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lsp_flutter/day09/about_page.dart';
-import 'package:lsp_flutter/day09/detail_page.dart';
-import 'package:lsp_flutter/day09/rounterconfig/rounter_config.dart';
+import 'about_page.dart';
+import 'detail_page.dart';
+import 'rounterconfig/rounter_config.dart';
 
 void main() {
   runApp(const MyApp());

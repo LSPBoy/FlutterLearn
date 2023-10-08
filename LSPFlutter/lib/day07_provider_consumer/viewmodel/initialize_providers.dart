@@ -1,6 +1,6 @@
-import 'package:lsp_flutter/day07/viewmodel/user_view_model.dart';
+import 'user_view_model.dart';
 import 'package:provider/provider.dart';
-import 'package:lsp_flutter/day07/model/user_info.dart';
+import '../model/user_info.dart';
 import 'counter_view_model.dart';
 import 'package:provider/single_child_widget.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:lsp_flutter/day07/viewmodel/initialize_providers.dart';
-import 'package:lsp_flutter/day07/viewmodel/counter_view_model.dart';
-import 'package:lsp_flutter/day07/viewmodel/user_view_model.dart';
+import 'viewmodel/initialize_providers.dart';
+import 'viewmodel/counter_view_model.dart';
+import 'viewmodel/user_view_model.dart';
 void main() {
   runApp(
       MultiProvider(

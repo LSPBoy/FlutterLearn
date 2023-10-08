@@ -74,6 +74,7 @@ class _HYHomePageState extends State<HYHomePage> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
+    print("执行_HYHomePageState的build方法");
     return Scaffold(
       appBar: AppBar(
         title: const Text("Animation"),

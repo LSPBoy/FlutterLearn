@@ -23,7 +23,7 @@ void getData() {
 
 
   //await版本
-  var res1 = getNetworkData('arg1');
+  // var res1 = getNetworkData('arg1');
   // var res2 = getNetworkData(res1);
   // var res3 = getNetworkData(res2);
 

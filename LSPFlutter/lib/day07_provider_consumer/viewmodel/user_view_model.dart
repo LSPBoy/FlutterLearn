@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:lsp_flutter/day07/model/user_info.dart';
+import 'package:lsp_flutter/day07_provider_consumer/model/user_info.dart';
 
 class LSPUserViewModel extends ChangeNotifier {
   UserInfo _userInfo;

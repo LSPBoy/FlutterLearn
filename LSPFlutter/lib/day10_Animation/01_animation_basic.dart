@@ -41,7 +41,7 @@ class _HYHomePageState extends State<HYHomePage> with SingleTickerProviderStateM
 // 创建AnimationController
   late AnimationController _controller;
   late Animation<double> _curvedAnimation;
-  late Animation _tween;
+  late Animation _tweenAnimation;
 
   @override
   void initState() {
@@ -55,7 +55,7 @@ class _HYHomePageState extends State<HYHomePage> with SingleTickerProviderStateM
     _curvedAnimation = CurvedAnimation(parent: _controller, curve: Curves.linear);
 
     // 3.Tween
-    _tween = Tween(begin: 50.0, end: 150.0).animate(_curvedAnimation);
+    _tweenAnimation = Tween(begin: 50.0, end: 150.0).animate(_curvedAnimation);
 
     // 监听动画值的改变
     _controller.addListener(() {
@@ -79,7 +79,7 @@ class _HYHomePageState extends State<HYHomePage> with SingleTickerProviderStateM
         title: const Text("Animation"),
       ),
       body: Center(
-        child: Icon(Icons.favorite, color: Colors.red, size: _tween.value,),
+        child: Icon(Icons.favorite, color: Colors.red, size: _tweenAnimation.value,),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.play_arrow),

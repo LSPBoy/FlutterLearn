@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lsp_flutter/day07/viewmodel/counter_view_model.dart';
+import 'viewmodel/counter_view_model.dart';
 import 'package:provider/provider.dart';
 
 /**
@@ -13,12 +13,9 @@ import 'package:provider/provider.dart';
 
 void main() {
   // 2.在应用程序的顶层ChangeNotifierProvider
-  runApp(ChangeNotifierProvider(
-    create: (context) {
-      return LSPCounterViewModel();
-    },
-    child: const MyApp(),
-  ));
+  runApp(ChangeNotifierProvider(create: (context) {
+    return LSPCounterViewModel();
+  }, child: const MyApp(),));
 }
 
 class MyApp extends StatelessWidget {
@@ -44,18 +41,17 @@ class HYHomePage extends StatelessWidget {
       body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[ShowData01(), ShowData02()],
+          children: <Widget>[
+            ShowData01(),
+            ShowData02()
+          ],
         ),
       ),
-      floatingActionButton: Selector<LSPCounterViewModel, LSPCounterViewModel>(builder: (ctx, counterVM, child) {
+      floatingActionButton: Consumer<LSPCounterViewModel>(builder: (ctx, counterVM, child) {
         print("floatingActionButton build方法被执行");
-        return FloatingActionButton(onPressed: (){
+        return FloatingActionButton(onPressed: () {
           counterVM.counter += 1;
-        },child: child,);
-      }, selector: (ctx, counterVM) {
-        return counterVM;
-      }, shouldRebuild: (prev, next) {
-        return false;
+        }, child: child,);
       }, child: const Icon(Icons.add),),
     );
   }
@@ -66,6 +62,7 @@ class ShowData01 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     print("data01的build方法");
 
     // 3.在其它位置使用共享的数据
@@ -73,10 +70,7 @@ class ShowData01 extends StatelessWidget {
     int count = Provider.of<LSPCounterViewModel>(context).counter;
     return Container(
       color: Colors.blue,
-      child: Text(
-        "当前计数一: $count",
-        style: const TextStyle(fontSize: 30),
-      ),
+      child: Text("当前计数一: $count", style: const TextStyle(fontSize: 30),),
     );
   }
 }
@@ -92,10 +86,7 @@ class ShowData02 extends StatelessWidget {
       //3.1通过Consumer获取值
       child: Consumer<LSPCounterViewModel>(builder: (ctx, counterVM, child) {
         print("data02 Consumer build方法被执行");
-        return Text(
-          "当前计数二: ${counterVM.counter}",
-          style: const TextStyle(fontSize: 30),
-        );
+        return Text("当前计数二: ${counterVM.counter}", style: const TextStyle(fontSize: 30),);
       }),
     );
   }
